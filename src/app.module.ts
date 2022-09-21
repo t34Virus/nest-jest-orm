@@ -6,6 +6,7 @@ import { Post } from './typeorm/entities/Post';
 import { Profile } from './typeorm/entities/Profile';
 import { User } from './typeorm/entities/User';
 import { UsersModule } from './users/users.module';
+import { PaymentsModule } from './payments/payments.module';
 
 @Module({
   imports: [
@@ -13,13 +14,14 @@ import { UsersModule } from './users/users.module';
       type: 'mysql',
       host: 'localhost',
       port: 3306,
-      username: '',
-      password: '',
-      database: '',
+      username: 'root',
+      password: 'destiny0506',
+      database: 'tutorial_db',
       entities: [User, Profile, Post],
       synchronize: true,
     }),
     UsersModule,
+    PaymentsModule,
   ],
   controllers: [AppController],
   providers: [AppService],
